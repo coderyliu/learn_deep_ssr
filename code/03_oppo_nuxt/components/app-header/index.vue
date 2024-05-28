@@ -36,8 +36,8 @@
 </template>
 
 <style scoped lang="scss">
-.app-header{
-  position: fixed;
+.app-header {
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -47,16 +47,20 @@
   color: #fff;
   background-color: #000;
 
-  .content{
+  .link span {
+    opacity: 0.8;
+  }
+
+  .content {
     @include normalFlex();
     height: 100%;
 
-    .left{
+    .left {
       @include normalFlex();
       height: 100%;
       align-items: center;
 
-      .link{
+      .link {
         margin-right: 24px;
         color: #fff;
         font-size: 12px;
@@ -65,11 +69,11 @@
       }
     }
 
-    .right{
+    .right {
       display: flex;
       align-items: center;
 
-      .link{
+      .link {
         padding: 0 14px;
         border-right: 1px solid #fff;
 
@@ -78,17 +82,19 @@
         text-decoration: none;
         cursor: pointer;
 
-        &:last-of-type{
+        &:last-of-type {
           border-right: none;
         }
-        &:first-of-type{
+
+        &:first-of-type {
           position: relative;
         }
-        &:first-of-type:hover > .download{
+
+        &:first-of-type:hover>.download {
           display: block;
         }
 
-        .download{
+        .download {
           display: none;
           position: absolute;
           top: 25px;
@@ -102,19 +108,21 @@
             height: 140px;
           }
 
-          .name{
+          .name {
             color: #333;
             margin-top: 3px;
           }
         }
 
-        i{
+        i {
           margin-right: 6px;
         }
+
         .icon-user {
           font-size: 12px;
           opacity: 1;
         }
+
         .icon-shoppingcart {
           font-size: 15px;
           opacity: 1;

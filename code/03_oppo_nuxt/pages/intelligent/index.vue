@@ -1,25 +1,16 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useHomeStore, type CategoryItemType } from '~/store/home';
+import { useHomeStore } from '~/store/home';
 
 const homeStore = useHomeStore()
 const { bannerList, categoryList } = storeToRefs(homeStore)
-homeStore.fetchHomeData('oppo')
-
-const handleItemClick = (item: CategoryItemType) => {
-  return navigateTo({
-    path: '/oppo-detail',
-    query: {
-      type: item.type
-    }
-  })
-}
+homeStore.fetchHomeData('intelligent')
 </script>
 
 <template>
-  <div class="wrapper home">
+  <div class="wrapper">
     <AppSwiper :banner-list="bannerList" />
-    <TabCategory :category-list="categoryList" @clickItem="handleItemClick" />
+    <TabCategory :category-list="categoryList" />
     <template v-for="item in categoryList">
       <SectionCategory :category-info="item" :ke="item.id" />
     </template>
