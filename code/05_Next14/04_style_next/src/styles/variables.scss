@@ -1,0 +1,6 @@
+$primaryColor: red;
+$primaryFontSize: 24px;
+
+@mixin border() {
+  border: 1px solid $primaryColor;
+}
